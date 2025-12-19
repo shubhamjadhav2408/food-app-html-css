@@ -2,27 +2,44 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="img/favicon.png" />
-		<title>Omnifood</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="description"
+			content="Omnifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It's tailored to your personal tastes and nutritional needs."
+		/>
 
+		<!-- Always include this line of code!!! -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="icon" href="img/favicon.png" />
+		<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+		<link rel="manifest" href="manifest.webmanifest" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 
-		<link rel="stylesheet" href="./css/general.css" />
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/queries.css" />
 
 		<script
 			type="module"
-			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+			src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
 		></script>
 		<script
-			nomodule
-			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+			nomodule=""
+			src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
 		></script>
+
+		<script
+			defer
+			src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+		></script>
+		<script defer src="js/script.js"></script>
+
+		<title>Omnifood &mdash; Never cook again!</title>
 	</head>
 	<body>
 		<header class="header">
@@ -55,6 +72,17 @@
 					</li>
 				</ul>
 			</nav>
+
+			<button class="btn-mobile-nav">
+				<ion-icon
+					class="icon-mobile-nav"
+					name="menu-outline"
+				></ion-icon>
+				<ion-icon
+					class="icon-mobile-nav"
+					name="close-outline"
+				></ion-icon>
+			</button>
 		</header>
 
 		<main>
@@ -62,22 +90,21 @@
 				<div class="hero">
 					<div class="hero-text-box">
 						<h1 class="heading-primary">
-							A healthy meal at your door, every single day
+							A healthy meal delivered to your door, every single
+							day
 						</h1>
-
 						<p class="hero-description">
 							The smart 365-days-per-year food subscription that
 							will make you eat healthy again. Tailored to your
 							personal tastes and nutritional needs.
 						</p>
-
-						<a href="#" class="btn btn--full margin-right-sm"
+						<a href="#cta" class="btn btn--full margin-right-sm"
 							>Start eating well</a
 						>
-						<a href="#" class="btn btn--outline"
+
+						<a href="#how" class="btn btn--outline"
 							>Learn more &darr;</a
 						>
-
 						<div class="delivered-meals">
 							<div class="delivered-imgs">
 								<img
@@ -111,12 +138,19 @@
 						</div>
 					</div>
 					<div class="hero-img-box">
-						<img
-							src="./img/hero.png"
-							alt="Woman enjoying food, meals in
-					storage container, and food bowls on a table"
-							class="hero-img"
-						/>
+						<picture>
+							<source srcset="img/hero.webp" type="image/webp" />
+							<source
+								srcset="img/hero-min.png"
+								type="image/png"
+							/>
+
+							<img
+								src="img/hero-min.png"
+								class="hero-img"
+								alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+							/>
+						</picture>
 					</div>
 				</div>
 			</section>
@@ -145,7 +179,8 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-how">
+
+			<section class="section-how" id="how">
 				<div class="container">
 					<span class="subheading">How it works</span>
 					<h2 class="heading-secondary">
@@ -174,7 +209,7 @@
 							src="img/app/app-screen-1.png"
 							class="step-img"
 							alt="iPhone app
-					preferences selection screen"
+            preferences selection screen"
 						/>
 					</div>
 
@@ -184,7 +219,7 @@
 							src="img/app/app-screen-2.png"
 							class="step-img"
 							alt="iPhone app
-					meal approving plan screen"
+            meal approving plan screen"
 						/>
 					</div>
 					<div class="step-text-box">
@@ -217,7 +252,7 @@
 							src="img/app/app-screen-3.png"
 							class="step-img"
 							alt="iPhone app
-					delivery screen"
+            delivery screen"
 						/>
 					</div>
 				</div>
@@ -465,7 +500,7 @@
 						<img
 							src="img/gallery/gallery-1.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 						<!-- <figcaption>Caption</figcaption> -->
 					</figure>
@@ -473,77 +508,77 @@
 						<img
 							src="img/gallery/gallery-2.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-3.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-4.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-5.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-6.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-7.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-8.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-9.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-10.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-11.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 					<figure class="gallery-item">
 						<img
 							src="img/gallery/gallery-12.jpg"
 							alt="Photo of beautifully
-					arranged food"
+            arranged food"
 						/>
 					</figure>
 				</div>
@@ -768,7 +803,7 @@
 								</button>
 
 								<!-- <input type="checkbox" />
-						<input type="number" /> -->
+                <input type="number" /> -->
 							</form>
 						</div>
 						<div

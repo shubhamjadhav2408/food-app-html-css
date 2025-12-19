@@ -1,5 +1,5 @@
 /**************************/
-/* HEADER COMPONENTS */
+/* HEADER */
 /**************************/
 
 .header {
@@ -7,8 +7,11 @@
 	justify-content: space-between;
 	align-items: center;
 	background-color: #fdf2e9;
+
+	/* Because we want header to be sticky later */
 	height: 9.6rem;
 	padding: 0 4.8rem;
+	position: relative;
 }
 
 .logo {
@@ -16,20 +19,20 @@
 }
 
 /**************************/
-/* NAVIGATION COMPONENTS */
+/* NAVIGATION */
 /**************************/
 
 .main-nav-list {
+	list-style: none;
 	display: flex;
 	align-items: center;
 	gap: 4.8rem;
-	list-style: none;
 }
 
 .main-nav-link:link,
 .main-nav-link:visited {
-	text-decoration: none;
 	display: inline-block;
+	text-decoration: none;
 	color: #333;
 	font-weight: 500;
 	font-size: 1.8rem;
@@ -38,46 +41,82 @@
 
 .main-nav-link:hover,
 .main-nav-link:active {
-	color: #e67e22;
+	color: #cf711f;
 }
 
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
-	background-color: #e67e22;
-	color: #fff;
 	padding: 1.2rem 2.4rem;
-	border-radius: 8px;
+	border-radius: 9px;
+	color: #fff;
+	background-color: #e67e22;
 }
 
 .main-nav-link.nav-cta:hover,
-.main-nav-link.nav-cta:visited {
+.main-nav-link.nav-cta:active {
 	background-color: #cf711f;
 }
 
+/* MOBILE */
+.btn-mobile-nav {
+	border: none;
+	background: none;
+	cursor: pointer;
+
+	display: none;
+}
+
+.icon-mobile-nav {
+	height: 4.8rem;
+	width: 4.8rem;
+	color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+	display: none;
+}
+
+/* STICKY NAVIGATION */
+.sticky .header {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 8rem;
+	padding-top: 0;
+	padding-bottom: 0;
+	background-color: rgba(255, 255, 255, 0.97);
+	z-index: 999;
+	box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+	margin-top: 9.6rem;
+}
+
 /**************************/
-/* HERO COMPONENTS */
+/* HERO SECTION */
 /**************************/
 
 .section-hero {
 	background-color: #fdf2e9;
-	padding: 4.8rem 0 9.6rem;
+	padding: 4.8rem 0 9.6rem 0;
 }
 
 .hero {
-	width: 130rem;
+	max-width: 130rem;
 	margin: 0 auto;
 	padding: 0 3.2rem;
-
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	gap: 9.6rem;
 	align-items: center;
-	gap: 9.8rem;
 }
 
 .hero-description {
 	font-size: 2rem;
 	line-height: 1.6;
-	margin-bottom: 4.4rem;
+	margin-bottom: 4.8rem;
 }
 
 .hero-img {
@@ -87,13 +126,12 @@
 .delivered-meals {
 	display: flex;
 	align-items: center;
-	margin-top: 8rem;
 	gap: 1.6rem;
+	margin-top: 8rem;
 }
 
 .delivered-imgs {
 	display: flex;
-	align-items: center;
 }
 
 .delivered-imgs img {
@@ -105,7 +143,7 @@
 }
 
 .delivered-imgs img:last-child {
-	margin-right: 0;
+	margin: 0;
 }
 
 .delivered-text {
@@ -119,38 +157,36 @@
 }
 
 /**************************/
-/* FEATURED IN COMPONENTS */
+/* FEATURED IN SECTION */
 /**************************/
 
 .section-featured {
-	padding: 4.8rem 0;
+	padding: 4.8rem 0 3.2rem 0;
 }
 
 .heading-featured-in {
-	color: #888;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	text-transform: uppercase;
-	letter-spacing: 0.8px;
+	letter-spacing: 0.75px;
 	font-weight: 500;
 	text-align: center;
 	margin-bottom: 2.4rem;
+	color: #888;
 }
 
 .logos {
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
 }
 
 .logos img {
 	height: 3.2rem;
-
 	filter: brightness(0);
-	opacity: 0.5;
+	opacity: 50%;
 }
 
 /**************************/
-/* HOW IT WORKS COMPONENTS */
+/* HOW IT WORKS SECTION */
 /**************************/
 
 .section-how {
@@ -212,7 +248,7 @@
 }
 
 /**************************/
-/* MEALS COMPONENTS */
+/* MEALS SECTION */
 /**************************/
 
 .section-meals {
@@ -232,7 +268,7 @@
 }
 
 .meal-content {
-	padding: 3.2rem 4.8rem 4.8rem;
+	padding: 3.2rem 4.8rem 4.8rem 4.8rem;
 }
 
 .meal-tags {
@@ -254,11 +290,9 @@
 .tag--vegetarian {
 	background-color: #51cf66;
 }
-
 .tag--vegan {
 	background-color: #94d82d;
 }
-
 .tag--paleo {
 	background-color: #ffd43b;
 }
@@ -279,7 +313,6 @@
 
 .meal-attribute {
 	font-size: 1.8rem;
-
 	display: flex;
 	align-items: center;
 	gap: 1.6rem;
@@ -301,7 +334,7 @@
 }
 
 /**************************/
-/* TESTIMONIALS COMPONENTS */
+/* TESTIMONIALS SECTION */
 /**************************/
 
 .section-testimonials {
@@ -361,7 +394,7 @@
 }
 
 /**************************/
-/* PRICING SECTION */
+/* MEALS SECTION */
 /**************************/
 
 .section-pricing {
